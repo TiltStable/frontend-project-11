@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%234f46e5'/%3E%3Ccircle cx='4.5' cy='11.5' r='1.5' fill='white'/%3E%3Cpath d='M3 6.5A6.5 6.5 0 0 1 9.5 13h-2A4.5 4.5 0 0 0 3 8.5z' fill='white'/%3E%3Cpath d='M3 3a10 10 0 0 1 10 10h-2a8 8 0 0 0-8-8z' fill='white'/%3E%3C/svg%3E"
+    />
+    <title>RSS агрегатор</title>
+  </head>
+  <body class="h-full bg-gray-100">
+    <main class="flex min-h-screen flex-col items-center px-4 py-10">
+      <div class="w-full max-w-xl rounded-lg bg-white p-8 shadow-md">
+        <h1 class="mb-2 text-3xl font-bold text-gray-900">RSS агрегатор</h1>
+        <p class="mb-6 text-gray-600">Начните читать RSS сегодня! Это легко и удобно.</p>
+        <form class="flex items-end gap-3" novalidate data-rss-form>
+          <div class="w-full">
+            <label for="url-input" class="mb-1 block text-sm font-medium text-gray-700">Ссылка RSS</label>
+            <input
+              id="url-input"
+              type="url"
+              name="url"
+              required
+              autofocus
+              autocomplete="off"
+              placeholder="ссылка RSS"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+            />
+          </div>
+          <button
+            type="submit"
+            class="shrink-0 rounded-md bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">Добавить</button>
+        </form>
+        <p class="feedback mt-3 text-sm" data-feedback></p>
+      </div>
+      <div class="mt-8 grid w-full max-w-3xl gap-6 md:grid-cols-2">
+        <section class="rounded-lg bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-xl font-bold text-gray-900" data-feeds-title></h2>
+          <ul class="space-y-4" data-feeds-list></ul>
+        </section>
+        <section class="rounded-lg bg-white p-6 shadow-md">
+          <h2 class="mb-4 text-xl font-bold text-gray-900" data-posts-title></h2>
+          <ul class="space-y-3" data-posts-list></ul>
+        </section>
+      </div>
+    </main>
+    <dialog
+      data-modal
+      class="w-full max-w-lg rounded-lg p-6 shadow-xl backdrop:bg-gray-900/50"
+    >
+      <div data-test="modal-body">
+        <h3 class="mb-2 text-xl font-bold text-gray-900" data-modal-title></h3>
+        <p class="text-gray-600" data-modal-description></p>
+      </div>
+      <div class="mt-6 flex items-center justify-between">
+        <a data-modal-link target="_blank" rel="noreferrer noopener" class="text-indigo-600 hover:underline">Читать полностью</a>
+        <button
+          type="button"
+          data-modal-close
+          class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">Закрыть</button>
+      </div>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

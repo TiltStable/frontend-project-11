@@ -1,28 +1,53 @@
 # RSS агрегатор
 
 [![hexlet-check](https://github.com/TiltStable/frontend-project-11/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TiltStable/frontend-project-11/actions)
+[![Node CI](https://github.com/TiltStable/frontend-project-11/actions/workflows/node-ci.yml/badge.svg)](https://github.com/TiltStable/frontend-project-11/actions)
 
-После проекта вы сможете уверенно работать с DOM, Vite, Tailwind CSS, AJAX, валидациями и деплоить проект
+Веб-приложение для чтения RSS-лент: добавляйте интересующие вас потоки и следите
+за новыми выпусками в одном месте.
+
+Сайт проекта: [будет добавлен после деплоя]
 
 Учебный проект Хекслета: https://ru.hexlet.io/programs/frontend
 Как это должно работать: https://files.hexlet.app/a/n1wvjd
 
+После проекта вы сможете уверенно работать с DOM, Vite, Tailwind CSS, AJAX, валидациями и деплоить проект
+
 ## Стек
 
 - JavaScript
+- Vite
+- Tailwind CSS
+- yup — валидация форм
+- Valtio — реактивное состояние
+- i18next — интерфейсные тексты и локали
+- Axios — HTTP-запросы
 
 ## Установка
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
 
 ```bash
 git clone https://github.com/TiltStable/frontend-project-11.git
 cd frontend-project-11
+make install
 ```
+
+Требуется Node.js >= 22.12.
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+```bash
+# запустить dev-сервер с hot reload
+make develop
+
+# собрать production-версию в dist/
+make build
+
+# локально посмотреть собранную версию
+make preview
+
+# проверить код линтером
+make lint
+```
 
 ---
 

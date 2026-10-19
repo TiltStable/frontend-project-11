@@ -43,6 +43,7 @@ const renderPosts = (posts, list) => {
       link.href = post.link;
       link.target = "_blank";
       link.rel = "noreferrer noopener";
+      link.setAttribute("data-seen", post.seen ? "true" : "false");
       link.className = post.seen
         ? "font-normal text-gray-700 hover:text-indigo-800 hover:underline"
         : "font-bold text-gray-900 hover:text-indigo-800 hover:underline";
@@ -50,6 +51,7 @@ const renderPosts = (posts, list) => {
     } else {
       const title = document.createElement("span");
       title.textContent = post.title;
+      title.setAttribute("data-seen", post.seen ? "true" : "false");
       title.className = post.seen ? "font-normal text-gray-700" : "font-bold text-gray-900";
       item.append(title);
     }
